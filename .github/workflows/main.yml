@@ -25,4 +25,4 @@ jobs:
       - name: main
         run: |
           echo begin check
-          echo main.sh
+          sh main.sh
