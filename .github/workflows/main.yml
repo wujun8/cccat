@@ -28,9 +28,14 @@ jobs:
           timezone: Asia/Shanghai
 
       - name: main
+        shell: bash
         env:
           CK: ${{ secrets.CK }}
           SCKEY: ${{ secrets.SCKEY }}
         run: |
           echo begin check
-          sh main.sh
+          bash main.sh
+      
+      - uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: Apply if run changes
