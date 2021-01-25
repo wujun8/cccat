@@ -32,11 +32,9 @@ jobs:
         env:
           CK: ${{ secrets.CK }}
           SCKEY: ${{ secrets.SCKEY }}
-          CKPAOLUZ: ${{ secrets.CKPAOLUZ }}
         run: |
           echo begin check
           bash main.sh
-          bash paoluz.sh
       
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
