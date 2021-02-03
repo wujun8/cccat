@@ -34,6 +34,7 @@ jobs:
         env:
           CK: ${{ secrets.CK }}
           SCKEY: ${{ secrets.SCKEY }}
+          DDTOKEN: ${{ secrets.DDTOKEN }}
         run: |
           echo begin check
           bash main.sh
