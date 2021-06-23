@@ -35,6 +35,7 @@ jobs:
           CK: ${{ secrets.CK }}
           SCKEY: ${{ secrets.SCKEY }}
           DDTOKEN: ${{ secrets.DDTOKEN }}
+          CFQUERY: ${{ secrets.CFQUERY }}
         run: |
           echo begin check
           bash main.sh
