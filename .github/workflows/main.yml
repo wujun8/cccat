@@ -39,11 +39,6 @@ jobs:
         run: |
           pip install -r requirements.txt
 
-      - name: Download last run result
-        uses: actions/download-artifact@v2
-        with:
-          name: runday
-
       - name: main
         shell: bash
         env:
@@ -54,8 +49,6 @@ jobs:
           echo begin check
           bash main.sh
       
-      - name: Upload run result
-        uses: actions/upload-artifact@v2
+      - uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          name: runday
-          path: runday
+          commit_message: Apply if run changes
