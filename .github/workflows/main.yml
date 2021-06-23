@@ -27,17 +27,14 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: '14'
-      - uses: actions/setup-python@v2
-        with:
-          python-version: '3.x'
+
       - uses: actions/cache@v2
         with:
-          path: ~/.cache/pip
-          key: pip-${{ hashFiles('requirements.txt') }}
+          path: ~/.npm
+          key: pip-${{ hashFiles('package.json') }}
 
-      - name: Install python requirements
-        run: |
-          pip install -r requirements.txt
+      - name: Install requirements
+        run: npm install
 
       - name: main
         shell: bash
