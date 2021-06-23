@@ -3,7 +3,7 @@ echo $title
 today=$(date +"%F")
 
 if [[ "$today" != $(< run_today) ]] ; then
-    curlr=$(python checkin.py)
+    curlr=$(node checkin.js)
     echo $curlr
     if [ -z "$curlr" ] ; then
         curlr="something is wrong"
@@ -17,4 +17,4 @@ else
     echo already run today @$today
     exit
 fi
-
+node checkin.js
