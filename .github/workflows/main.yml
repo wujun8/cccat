@@ -38,9 +38,7 @@ jobs:
           key: npm-${{ hashFiles('package.json') }}
 
       - name: Install requirements
-        run: | 
-          npm install postman-request --save
-          npm install git+https://github.com/EIGHTFINITE/cloudscraper.git
+        run: npm install
 
       - name: main
         shell: bash
