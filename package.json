@@ -5,6 +5,8 @@
   "main": "testcf.js",
   "dependencies": {
     "cloudflare-scraper": "^1.0.8",
+    "cloudscraper": "git+https://github.com/EIGHTFINITE/cloudscraper.git",
+    "postman-request": "^2.88.1-postman.30",
     "puppeteer": "^5.2.1"
   },
   "devDependencies": {},
