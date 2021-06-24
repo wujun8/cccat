@@ -1,13 +1,13 @@
-const cloudflareScraper = require('cloudflare-scraper');
+const cloudflareScraper = require('cloudscraper');
 
 let data = {
 headers: {
-    'cookie': process.env.CK,
+  'cookie': process.env.CK,
   'authority': 'cccat.io',
   'accept': 'application/json, text/javascript, */*; q=0.01',
   'dnt': '1',
   'x-requested-with': 'XMLHttpRequest',
-  'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.111 Safari/537.36',
+  'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.111 Safari/537.36',
   'sec-fetch-site': 'same-origin',
   'sec-fetch-mode': 'cors',
   'sec-fetch-dest': 'empty',
