@@ -1,4 +1,4 @@
-const cloudflareScraper = require('cloudscraper');
+const cloudflareScraper = require('cloudflare-scraper');
 
 let data = {
 headers: {
