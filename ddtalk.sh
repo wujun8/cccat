@@ -1,0 +1,1 @@
+curl -sS "https://oapi.dingtalk.com/robot/send?access_token=$DDTOKEN" -X "POST" -H "Accept: application/json;charset=utf-8" -H "Content-Type: application/json;charset=utf-8" -d '{"msgtype": "text","text": {"content": "'"$NOTIFY_MESSAGE"'"}}' --compressed
