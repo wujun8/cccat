@@ -34,11 +34,11 @@ jobs:
           key: npm-g
       - uses: actions/cache@v2
         with:
-          path: node_modules
+          path: /usr/local/lib/node_modules
           key: npm-${{ hashFiles('package.json') }}
 
       - name: Install requirements
-        run: npm install
+        run: npm install -g
 
       - name: main
         shell: bash
@@ -46,6 +46,7 @@ jobs:
           CK: ${{ secrets.CK }}
           SCKEY: ${{ secrets.SCKEY }}
           DDTOKEN: ${{ secrets.DDTOKEN }}
+          NODE_PATH: /usr/local/lib/node_modules
         run: |
           echo begin check
           bash main.sh
