@@ -38,7 +38,7 @@ jobs:
           key: npm-${{ hashFiles('package.json') }}
 
       - name: Install requirements
-        run: npm install -g
+        run: npm install -g /usr/local/lib/node_modules
 
       - name: main
         shell: bash
