@@ -3,15 +3,14 @@ echo $title
 today=$(date +"%F")
 
 if [[ "$today" != $(< run_today) ]] ; then
-    curlr=$(node checkin.js)
-    echo $curlr
-    if [ -z "$curlr" ] ; then
+    node checkin.js
+    EXCODE=$?
+    if [ "0" != "$EXCODE" ] ; then
         curlr="something is wrong"
-        echo $curlr
+        curlr=$(echo -e "CCCAT checkin $curlr" | sed 's/["\{}]//g')
+        curl -sS "https://oapi.dingtalk.com/robot/send?access_token=$DDTOKEN" -X "POST" -H "Accept: application/json;charset=utf-8" -H "Content-Type: application/json;charset=utf-8" -d '{"msgtype": "text","text": {"content": "'"$curlr"'"}}' --compressed
     fi
-    curlr=$(echo -e "CCCAT checkin $curlr" | sed 's/["\{}]//g')
     #curl -s -G "https://sc.ftqq.com/$SCKEY.send" --data-urlencode "text=$curlr" --data-urlencode "desp=$curlr"
-    curl -sS "https://oapi.dingtalk.com/robot/send?access_token=$DDTOKEN" -X "POST" -H "Accept: application/json;charset=utf-8" -H "Content-Type: application/json;charset=utf-8" -d '{"msgtype": "text","text": {"content": "'"$curlr"'"}}' --compressed
     echo $today > run_today
 else
     echo already run today @$today
